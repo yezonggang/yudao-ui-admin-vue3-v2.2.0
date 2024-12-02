@@ -1,4 +1,5 @@
 <template>
+      <!-- 这是unocss的样式定义方式 -->
   <div
     :class="prefixCls"
     class="relative h-[100%] lt-md:px-10px lt-sm:px-10px lt-xl:px-10px lt-xl:px-10px"
@@ -41,7 +42,7 @@
             <LocaleDropdown class="dark:text-white lt-xl:text-white" />
           </div>
         </div>
-        <!-- 右边的登录界面 -->
+        <!-- 右边的登录界面 Transition是多个form 切换-->
         <Transition appear enter-active-class="animate__animated animate__bounceInRight">
           <div
             class="m-auto h-full w-[100%] flex items-center at-2xl:max-w-500px at-lg:max-w-500px at-md:max-w-500px at-xl:max-w-500px"
@@ -76,17 +77,21 @@ defineOptions({ name: 'Login' })
 
 const { t } = useI18n()
 const appStore = useAppStore()
+// 从namespace获取前缀跟下面的样式获取前缀应该是相同的，如yudao-login
 const { getPrefixCls } = useDesign()
 const prefixCls = getPrefixCls('login')
 </script>
 
 <style lang="scss" scoped>
+// 从namespace获取前缀，如yudao-login
 $prefix-cls: #{$namespace}-login;
 
+// 匹配样式
 .#{$prefix-cls} {
   overflow: auto;
-
+// &的意思是父选择器的名字，拼起来就是如yudao-login__left
   &__left {
+    //before动画
     &::before {
       position: absolute;
       top: 0;

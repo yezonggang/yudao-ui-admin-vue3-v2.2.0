@@ -10,7 +10,7 @@ import { setupI18n } from '@/plugins/vueI18n'
 // 引入状态管理
 import { setupStore } from '@/store'
 
-// 全局组件
+// 把Icon注册成全局组件
 import { setupGlobCom } from '@/components'
 
 // 引入 element-plus
