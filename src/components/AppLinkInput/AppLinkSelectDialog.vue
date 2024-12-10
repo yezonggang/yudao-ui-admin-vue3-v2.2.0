@@ -188,7 +188,7 @@ const detailSelectDialog = ref<{
   type?: APP_LINK_TYPE_ENUM
 }>({
   visible: false,
-  id: undefined,
+  id: undefined, 
   type: undefined
 })
 // 处理详情选择
